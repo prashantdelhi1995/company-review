@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Review</title>
+    <link rel="stylesheet" href="/css/main.css" >
+       
+</head>
+<body>
+    <div class="container">
+        <h1>Company Review</h1>
+        <form id="companyForm" method="POST" action="/add-review">
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" required>
+            
+            <label for="pros">Pros:</label>
+            <textarea id="pros" name="pros" required></textarea>
+            
+            <label for="cons">Cons:</label>
+            <textarea id="cons" name="cons" required></textarea>
+            
+            <label for="rating">Rating:</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+            
+            <input type="submit" value="Submit">
+        </form>
+        
+
+        <div class="search-container">
+            <h2>Search Company</h2>
+            <form id="searchForm" method="POST" action="/search">
+                <input type="text" id="searchInput" name="searchInput" placeholder="Search company name...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+         
+        
+        
+       
+        
+    
+    
+
+        
+    <script>
+        // JavaScript for star rating interactivity
+        const stars = document.querySelectorAll('.rating input[type="radio"]');
+        stars.forEach((star) => {
+            star.addEventListener('change', function() {
+                let selectedRating = this.value;
+                console.log('Selected Rating:', selectedRating);
+            });
+        });
+    </script>
+</body>
+</html>

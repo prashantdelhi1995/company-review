@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Review</title>
+    <link rel="stylesheet" href="/css/main.css" >
+       
+</head>
+<body>
+    
+
+       
+
+      
+    
+       
+        
+        <% if (searchResults && searchResults.length > 0) { %> <!-- Check if searchResults is defined -->
+            <h1>Search Results</h1>
+            <ul>
+                <% searchResults.forEach(function(result) { %>
+                    <li><%= result.companyName %></li>
+                    <li><%= result.pros%></li>
+                    <li><%= result.cons %></li>
+                    <li><%= result.rating %></li>
+                <% }); %>
+            </ul>
+        <% } %>
+        
+    
+    
+ 
+</body>
+</html>
